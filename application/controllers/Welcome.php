@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 
-
+	// Get Artists
 	$query = $this->db->query('SELECT * FROM Artist ');
     
     	//$data = [];
@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
     	$data['cities'] = [];
 
 
-
+    	// loop through results
         foreach ($query->result() as $row)
     	{
          //var_dump($row->bandName);

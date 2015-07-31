@@ -5,65 +5,75 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../public/main.css">
 
 </head>
 
 <body>
-	
- <nav class="top-bar" data-topbar role="navigation">
-	<ul class="title-area">
-		<li class="name">
-			<h1>street</h1>
-		</li>
-	</ul>
-
- <nav>
- <section class="top-bar-section">
-	<ul class="right ">
-<!-- {% block head %} -->
-<li><a href="/ASLProject/index.php/main/requestForm">Enter Event</a></li>
-<li><a href="/ASLProject/index.php/main/loggOut">Logout</a></li>
-
-<!-- {% endblock %} -->
-
-<h1><?php echo $email;?></h1>
-
-<h2><?php echo $city;?></h2>
-
-			</ul>	
-	</section>
-	</nav> 
-</nav>
-
-<h1>Home</h1>
-
+	<nav id="header" class="navbar">
+            <div id="header-container" class="container navbar-container">
+                <div class="navbar-header">
+                    <a id="brand" class="navbar-brand upper" href="/BuskrApp">Buskr</a>
+                </div>
+                <div id="navbar">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="active"><a class="upper" href="/BuskrApp/index.php/main/loggin">Home</a></li>
+						<li><a class="upper" href="/BuskrApp/index.php/main/requestForm">Enter Event</a></li>
+						<li><a class="upper" href="/BuskrApp/index.php/main/loggOut">Logout</a></li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div><!-- /.container -->
+        </nav><!-- /.navbar -->
+    <div class="container">
+    	<div class="row">
+    		<div class="text-center">
+				<h3>Email: <?php echo $email;?></h3>
+				<h3>City: <?php echo $city;?></h3>	
+			</div>
+		</div>
+	</div>
+	<hr>
+<div class="container">
+	<div class="row">
+		<div class="col-centered">
+			<h1 class="text-center">Upcoming Events</h1>
+		</div>
+	</div>
+</div>
+<hr>
 
 <?PHP for ($i=0; $i < count($name) ; $i++) { ?>
 	
-<h2>Artist name:</h2>
-<h4><?php echo $name[$i];?></h4>
-
-<h3>description:</h3>
-<p><?php echo $description[$i];?></p>
-
-<h3>Adress:</h3>
-<h4><?php echo $location[$i];?></h4>
-
-<h3>city:</h3>
-<h4><?php echo $cities[$i];?></h4>
-<h3>Time:</h3>
-
-<h4><?php echo $setTime[$i];?></h4>
-
-<h3>Date:</h3>
-<h4><?php echo $date[$i];?></h4>
-
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-centered">
+            <div class="box">
+                <div class="info">
+                    <h4 class="text-center"><?php echo $name[$i];?></h4>
+                    <hr>
+                    <p class="text-center">Description</p>
+                    <h4 class="text-center"><?php echo $description[$i];?></h4>
+                    <h3 class="text-center">Address:</h3>
+                    <h4 class="text-center"><?php echo $location[$i];?></h4>
+                    <hr>
+                    <h3 class="text-center">City:</h3>
+					<h4 class="text-center"><?php echo $cities[$i];?></h4>
+					<h3 class="text-center">Time:</h3>
+					<h4 class="text-center"><?php echo $setTime[$i];?></h4>
+                    <h3 class="text-center">Date:</h3>
+					<h4 class="text-center"><?php echo $date[$i];?></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <br>
 
 
 <?php }?>
 <br>
+
 
 
 
